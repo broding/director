@@ -26,20 +26,19 @@ public final class ModelCollection
 	addModel(driversModel = new DriversModel());
 	
 	File file = Gdx.files.internal("savefile.sqlite").file();
-	System.out.print(Gdx.files.internal("savefile.sqlite").exists());
 	SQLiteConnection db = new SQLiteConnection(file);
 	
 	try {
 	    db.open(true);
-	    System.out.print(db);
+	    
 	    for(Model model : models)
 		model.loadFromDatabase(db);
 	   
 	} catch (SQLiteException ex) {
 	    Logger.getLogger(ModelCollection.class.getName()).log(Level.SEVERE, null, ex);
 	}
-	    
 	
+	db.dispose();
     }
     
     private void addModel(Model model)

@@ -24,7 +24,7 @@ public class DriversModel extends Model
     
     public ArrayList<Driver> getAll()
     {
-	return null;
+	return drivers;
     }
     
     public Driver getWithId(int id)
@@ -43,7 +43,11 @@ public class DriversModel extends Model
     {
 	try {
 	    SQLiteStatement statement = db.prepare("SELECT * FROM drivers");
-	    //statement.dispose();
+	    while (statement.step())
+	    {
+                drivers.add(new Driver(statement));
+            }
+	    statement.dispose();
 	} 
 	catch (SQLiteException ex) {
 	    Logger.getLogger(DriversModel.class.getName()).log(Level.SEVERE, null, ex);

@@ -28,10 +28,25 @@ public class Controller
 	
     }
     
-    final protected void setView(View view)
+    final protected void addView(View view)
     {
-	director.setView(view);
+	director.addView(view);
     }
+    
+    final protected void removeView(View view)
+    {
+	director.removeView(view);
+    }
+    
+    final protected void removeAllViews()
+    {
+	director.removeAllView();
+    }
+    
+     public void replaceView(View oldView, View newView)
+     {
+	 director.replaceView(oldView, newView);
+     }
     
     final protected ModelCollection getModelCollection()
     {

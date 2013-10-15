@@ -3,6 +3,7 @@ package nl.basroding.director;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Files.FileType;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -30,7 +31,6 @@ public class Core implements ApplicationListener
     public void create()
     {
 	director = new Director();
-        Gdx.input.setInputProcessor(director.getStage());
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Main
     {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         
-        config.title = "De Verhalen Machine";
+        config.title = "Grand Prix Director";
         config.resizable = false;
 	config.fullscreen = false;
         config.width = 1280;

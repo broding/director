@@ -6,6 +6,7 @@ import nl.basroding.director.Director;
 import nl.basroding.director.models.data.Driver;
 import nl.basroding.director.views.DriverView;
 import nl.basroding.director.views.MenuView;
+import nl.basroding.director.views.TopMenuView;
 
 /**
  *
@@ -13,13 +14,19 @@ import nl.basroding.director.views.MenuView;
  */
 public class IndexController extends Controller
 {   
+    TopMenuView topMenuView;
+    MenuView menuView;
+    
     @Override
     public void index()
     {
-	MenuView view = new MenuView();
-	this.setView(view);
+	topMenuView = new TopMenuView();
 	
-	view.buttonNextDriver.addListener(new ChangeListener() {
+	menuView = new MenuView();
+	this.addView(menuView);
+	this.addView(topMenuView);
+	
+	menuView.buttonNextDriver.addListener(new ChangeListener() {
 
 	    @Override
 	    public void changed(ChangeListener.ChangeEvent event, Actor actor) 
@@ -31,6 +38,6 @@ public class IndexController extends Controller
     
     private void changeToDriverView()
     {
-	setView(new DriverView(getModelCollection().getDriversModel().getWithId(1)));
+	replaceView(menuView, new DriverView(getModelCollection().getDriversModel().getWithId(1)));
     }
 }
