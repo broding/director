@@ -19,9 +19,9 @@ public class Main
         
         config.title = "De Verhalen Machine";
         config.resizable = false;
-	config.fullscreen = true;
-        config.width = 1680;
-        config.height = 1050;
+	config.fullscreen = false;
+        config.width = 1280;
+        config.height = 800;
         config.useGL20 = true;
 	config.samples = 2;
 		
