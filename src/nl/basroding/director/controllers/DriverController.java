@@ -12,23 +12,11 @@ import nl.basroding.director.views.TopMenuView;
  *
  * @author basroding
  */
-public class IndexController extends Controller
+public class DriverController extends Controller
 {   
-    TopMenuView topMenuView;
-    MenuView menuView;
-    
-    @Override
-    public void index()
+    public void showId(int id)
     {
-	topMenuView = new TopMenuView();
-	
-	menuView = new MenuView();
-	this.addView(menuView);
-	this.addView(topMenuView);
-    }
-    
-    private void changeToDriverView()
-    {
-	replaceView(menuView, new DriverView(getModelCollection().getDriversModel().getWithId(1)));
+	DriverView view = new DriverView(getModelCollection().getDriversModel().getWithId(id));
+	this.addView(view);
     }
 }

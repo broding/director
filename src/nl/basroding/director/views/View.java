@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import nl.basroding.director.Director;
+import nl.basroding.director.controllers.Controller;
 import nl.basroding.director.views.components.Component;
 
 /**
@@ -17,16 +19,18 @@ import nl.basroding.director.views.components.Component;
 public class View 
 {
     private Stage stage;
+    private Director director;
     private Skin defaultSkin;
     
     public View()
     {
     }
     
-    final public void setup(Stage stage, Skin defaultSkin)
+    final public void setup(Stage stage, Director director, Skin defaultSkin)
     {
 	this.defaultSkin = defaultSkin;
 	this.stage = stage;
+	this.director = director;
     }
     
     public void initialize()
@@ -62,8 +66,12 @@ public class View
 	stage.addActor(component);
     }
     
+    protected void switchController(Controller controller)
+    {
+	this.director.setController(controller);
+    }
 
-    public Skin getDefaultSkin() 
+    protected Skin getDefaultSkin() 
     {
 	return defaultSkin;
     }

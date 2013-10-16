@@ -62,7 +62,7 @@ public final class Director
 	
 	Stage stage = new Stage();
 	this.inputProcessor.addProcessor(stage);
-	view.setup(stage, defaultSkin);
+	view.setup(stage, this, defaultSkin);
 	view.initialize();
     }
     
@@ -74,7 +74,7 @@ public final class Director
 	
 	Stage stage = new Stage();
 	this.inputProcessor.addProcessor(stage);
-	newView.setup(stage, defaultSkin);
+	newView.setup(stage, this, defaultSkin);
 	newView.initialize();
     }
     
