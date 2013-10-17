@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.basroding.director.controllers.Controller;
+import nl.basroding.director.controllers.DeskController;
 import nl.basroding.director.controllers.IndexController;
 import nl.basroding.director.views.View;
 
@@ -32,7 +33,7 @@ public final class Director
 	defaultSkin = new Skin(Gdx.files.internal("default/uiskin.skin"));
 	views = new ArrayList<View>(20);
 	modelCollection = new ModelCollection();
-	setController(new IndexController());
+	setController(new DeskController());
     }
     
     public void update()

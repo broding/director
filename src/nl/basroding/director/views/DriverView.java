@@ -3,7 +3,7 @@ package nl.basroding.director.views;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import nl.basroding.director.models.data.Driver;
-import nl.basroding.director.views.components.BigDriverProfile;
+import nl.basroding.director.views.actors.BigDriverProfile;
 
 /**
  *

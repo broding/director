@@ -1,4 +1,4 @@
-package nl.basroding.director.views.components;
+package nl.basroding.director.views.actors;
 
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;

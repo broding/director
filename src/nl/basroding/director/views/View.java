@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import nl.basroding.director.Director;
 import nl.basroding.director.controllers.Controller;
-import nl.basroding.director.views.components.Component;
+import nl.basroding.director.views.actors.Component;
 
 /**
  *

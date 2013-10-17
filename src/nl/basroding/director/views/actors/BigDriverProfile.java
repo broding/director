@@ -1,4 +1,4 @@
-package nl.basroding.director.views.components;
+package nl.basroding.director.views.actors;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
