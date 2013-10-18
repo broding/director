@@ -23,12 +23,20 @@ public class IndexController extends Controller
 	topMenuView = new TopMenuView();
 	
 	menuView = new MenuView();
+	
 	this.addView(menuView);
 	this.addView(topMenuView);
-    }
-    
-    private void changeToDriverView()
-    {
-	replaceView(menuView, new DriverView(getModelCollection().getDriversModel().getWithId(1)));
+	
+	menuView.buttonNextDriver.addListener(new ChangeListener() {
+
+	    @Override
+	    public void changed(ChangeListener.ChangeEvent event, Actor actor) 
+	    {
+		DriverController newController = new DriverController();
+		setController(newController);
+		newController.showId(1);
+	    }
+	    
+	});
     }
 }

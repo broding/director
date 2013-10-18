@@ -20,17 +20,8 @@ public class MenuView extends View
     public void initialize()
     {
 	buttonNextDriver = new TextButton("Next", this.getDefaultSkin());
-	buttonNextDriver.addListener(new ChangeListener() {
-
-	    @Override
-	    public void changed(ChangeListener.ChangeEvent event, Actor actor) 
-	    {
-		DriverController newController = new DriverController();
-		switchController(newController);
-		newController.showId(1);
-	    }
-	    
-	});
+	buttonNextDriver.setX(400);
+	buttonNextDriver.setY(400);
 	Texture texture = new Texture("images/backgrounds/grojean.jpg");
 	Image image = new Image(texture);
 	

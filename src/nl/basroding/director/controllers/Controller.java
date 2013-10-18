@@ -28,6 +28,11 @@ public class Controller
 	
     }
     
+    final protected void setController(Controller controller)
+    {
+	director.setController(controller);
+    }
+    
     final protected void addView(View view)
     {
 	director.addView(view);
