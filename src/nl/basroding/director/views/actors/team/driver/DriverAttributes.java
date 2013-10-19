@@ -4,19 +4,19 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import nl.basroding.director.models.data.Driver;
-import nl.basroding.director.views.actors.basic.Window;
+import nl.basroding.director.views.actors.basic.TitledWindow;
 
 /**
  *
  * @author basroding
  */
-public class DriverAttributes extends Window
+public class DriverAttributes extends TitledWindow
 {
     private Driver driver;
     
     public DriverAttributes(Driver driver)
     {
-	super(536, 270);
+	super("Attributes", 536, 270);
 	
 	this.driver = driver;
 	

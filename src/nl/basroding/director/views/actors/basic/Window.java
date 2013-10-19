@@ -12,8 +12,8 @@ public class Window extends Group
 {
     public final static int MARGIN = 8;
     
-    public FilledRectangle background;
-    public FilledRectangle border;
+    private FilledRectangle background;
+    private FilledRectangle border;
     
     public Window(int width, int height)
     {

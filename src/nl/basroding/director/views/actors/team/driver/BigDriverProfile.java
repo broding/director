@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import nl.basroding.director.models.data.Driver;
 import nl.basroding.director.views.TableFactory;
+import nl.basroding.director.views.actors.basic.TabbedList;
 import nl.basroding.director.views.actors.basic.Window;
 
 /**
@@ -31,10 +32,10 @@ public class BigDriverProfile extends Window
 	table.left();
 	table.pad(Window.MARGIN * 2);
 	
-	String strings[] = new String[2];
-	strings[0] = "Bas";
-	strings[1] = "Bas2";
-	List list = new List(strings, TableFactory.defaultSkin);
+	String[] items = {"Name\t" + driver.getForName() + " " + driver.getSurName()};
+	TabbedList list = new TabbedList(items, TableFactory.defaultSkin);
+	list.setColumnGap(20f);
+	list.setHeader("Time\tName");
 	
 	Texture texture = new Texture("images/tests/grosjean.jpg");
 	
@@ -43,7 +44,7 @@ public class BigDriverProfile extends Window
 	image.setX(0);
 	image.setY(0);
 	
-	table.add(image).pad(Window.MARGIN);
+	//table.add(image).pad(Window.MARGIN);
 	table.add(list).pad(Window.MARGIN).top();
 	
 	this.addActor(table);
