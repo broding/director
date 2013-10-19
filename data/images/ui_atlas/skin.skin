@@ -1,6 +1,8 @@
 {
 com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: default.fnt } },
 com.badlogic.gdx.graphics.g2d.BitmapFont: { aller11: { file: aller11.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: { aller16: { file: aller16.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: { allerlight11: { file: allerlight11.fnt } },
 
 com.badlogic.gdx.graphics.Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },
@@ -14,7 +16,8 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 },
 
 com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
-	default: { font: aller11, fontColor: black }
+	default: { font: allerlight11, fontColor: black },
+	window_title: { font: aller16, fontColor: black }
 },
 
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
@@ -25,5 +28,9 @@ com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 
 com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
 	default: { font: aller11, fontColorSelected: black, fontColorUnselected: black, selection: white },
+},
+
+nl.basroding.director.views.actors.basic.TabbedList$TabbedListStyle: {
+    default: { font: aller11, fontColorSelected: black, fontColorUnselected: black, selection: white },
 }
 }
