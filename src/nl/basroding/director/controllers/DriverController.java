@@ -12,9 +12,6 @@ public class DriverController extends Controller
     public void showId(int id)
     {
 	DriverView view = new DriverView(getModelCollection().getDriversModel().getWithId(id));
-	this.addView(view);
-	
-	SideMenuView sideMenu = new SideMenuView();
-	this.addView(sideMenu);
+	this.setView(view);
     }
 }

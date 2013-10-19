@@ -1,5 +1,7 @@
 {
 com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: default.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: { aller11: { file: aller11.fnt } },
+
 com.badlogic.gdx.graphics.Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },
 	white: { a: 1, b: 1, g: 1, r: 1 },
@@ -11,9 +13,17 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 	sidemenu-highlight: { name: sidemenu, color: { r: 1, g: 1, b: 1, a: 0.45 } },
 },
 
+com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+	default: { font: aller11, fontColor: black }
+},
+
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 	default: { down: sidemenu, up: sidemenu, font: default-font, fontColor: white },
-	sidebar: { down: sidemenu, up: sidemenu, over: sidemenu_hover, font: default-font, fontColor: white, unpressedOffsetY: -20, pressedOffsetY: -20 },
-	sidebar_special: { down: sidemenu_special, up: sidemenu_special, over: sidemenu_special_hover, font: default-font, fontColor: white, unpressedOffsetY: -20, pressedOffsetY: -20 },
+	sidebar: { down: sidemenu, up: sidemenu, over: sidemenu_hover, font: aller11, fontColor: white, unpressedOffsetY: -20, pressedOffsetY: -20 },
+	sidebar_special: { down: sidemenu_special, up: sidemenu_special, over: sidemenu_special_hover, font: aller11, fontColor: white, unpressedOffsetY: -20, pressedOffsetY: -20 },
+},
+
+com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
+	default: { font: aller11, fontColorSelected: black, fontColorUnselected: black, selection: white },
 }
 }

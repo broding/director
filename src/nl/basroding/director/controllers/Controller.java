@@ -2,6 +2,9 @@ package nl.basroding.director.controllers;
 
 import nl.basroding.director.Director;
 import nl.basroding.director.ModelCollection;
+import nl.basroding.director.views.ContentView;
+import nl.basroding.director.views.SideMenuView;
+import nl.basroding.director.views.TopbarView;
 import nl.basroding.director.views.View;
 
 /**
@@ -12,6 +15,7 @@ public class Controller
 {
     private Director director;
     private ModelCollection modelCollection;
+    private View view;
     
     public Controller()
     {
@@ -33,28 +37,22 @@ public class Controller
 	director.setController(controller);
     }
     
-    final protected void addView(View view)
+    final protected void setView(ContentView newView)
     {
-	director.addView(view);
+	this.view = newView;
+	this.view.setX(SideMenuView.WIDTH);
+	this.director.setupView(newView);
     }
-    
-    final protected void removeView(View view)
-    {
-	director.removeView(view);
-    }
-    
-    final protected void removeAllViews()
-    {
-	director.removeAllView();
-    }
-    
-     public void replaceView(View oldView, View newView)
-     {
-	 director.replaceView(oldView, newView);
-     }
     
     final protected ModelCollection getModelCollection()
     {
 	return this.modelCollection;
     }
+
+    final public View getView()
+    {
+	return view;
+    }
+    
+    
 }

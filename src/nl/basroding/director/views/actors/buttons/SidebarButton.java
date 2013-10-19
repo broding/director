@@ -1,4 +1,4 @@
-package nl.basroding.director.views.actors.components.buttons;
+package nl.basroding.director.views.actors.buttons;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -20,10 +20,6 @@ public class SidebarButton extends TextButton
     public SidebarButton(String text, String icon, Skin skin)
     {
 	this(text, icon, skin, false);
-	
-	TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("images/ui_atlas/skin.atlas"));
-	
-	texture = atlas.findRegion("icons/" + icon);
     }
     
     public SidebarButton(String text, String icon, Skin skin, boolean special)
