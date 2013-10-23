@@ -5,6 +5,7 @@ import com.almworks.sqlite4java.SQLiteException;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.hibernate.Session;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Model
 	return null;
     }
     
-    public void loadFromDatabase(SQLiteConnection db)
+    public void loadFromDatabase(Session session)
     {
 	
     }

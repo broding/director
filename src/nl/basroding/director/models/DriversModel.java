@@ -1,13 +1,8 @@
 package nl.basroding.director.models;
 
 import nl.basroding.director.models.data.Driver;
-import com.almworks.sqlite4java.SQLiteConnection;
-import com.almworks.sqlite4java.SQLiteException;
-import com.almworks.sqlite4java.SQLiteStatement;
-import java.io.File;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.hibernate.Session;
 
 /**
  *
@@ -39,20 +34,8 @@ public class DriversModel extends Model
     }
 
     @Override
-    public void loadFromDatabase(SQLiteConnection db) 
+    public void loadFromDatabase(Session session) 
     {
-	try {
-	    SQLiteStatement statement = db.prepare("SELECT * FROM drivers");
-	    while (statement.step())
-	    {
-                drivers.add(new Driver(statement));
-            }
-	    statement.dispose();
-	} 
-	catch (SQLiteException ex) {
-	    Logger.getLogger(DriversModel.class.getName()).log(Level.SEVERE, null, ex);
-	}
+	drivers = (ArrayList<Driver>) session.createCriteria(Driver.class).list();
     }
-    
-    
 }

@@ -1,34 +1,36 @@
 package nl.basroding.director.models.data;
-
-import com.almworks.sqlite4java.SQLiteException;
-import com.almworks.sqlite4java.SQLiteStatement;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author basroding
  */
+@Entity
 public class Driver 
 {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
-    private String forName;
-    private String surName;
-    private short attributeSteering;
-    private short attributeConcentration;
-    private short attributePressure;
     
-    public Driver(SQLiteStatement statement)
-    {
-	try {
-	    id = statement.columnInt(0);
-	    forName = statement.columnString(1);
-	    surName = statement.columnString(2);
-	} catch (SQLiteException ex) {
-	    Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
-	}
-    }
+    private String forName;
+    
+    private String surName;
+    
+    @ManyToOne
+    private Team team;
+    
+    @ManyToOne
+    private Country country;
+    
+    @Embedded
+    private Attributes attributes;
 
     public int getId() 
     {
@@ -45,18 +47,34 @@ public class Driver
 	return forName;
     }
 
-    public short getAttributeSteering()
+    public Team getTeam() 
     {
-	return attributeSteering;
+	return team;
     }
 
-    public short getAttributeConcentration() 
+    public Country getCountry() 
     {
-	return attributeConcentration;
+	return country;
     }
 
-    public short getAttributePressure()
+    public Attributes getAttributes() 
     {
-	return attributePressure;
+	return attributes;
+    }
+
+    public void setCountry(Country country) 
+    {
+	this.country = country;
+    }
+    
+    public static Driver createDummy()
+    {
+	Driver driver = new Driver();
+	
+	driver.forName = "Bas";
+	driver.surName = "Roding";
+	driver.attributes = Attributes.createDummy();
+	
+	return driver;
     }
 }
