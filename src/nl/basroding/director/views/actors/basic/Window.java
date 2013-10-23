@@ -25,6 +25,5 @@ public class Window extends Group
 	
 	addActor(border);
 	addActor(background);
-	
     }
 }

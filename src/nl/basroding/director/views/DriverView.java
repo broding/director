@@ -27,7 +27,7 @@ public class DriverView extends ContentView
     
     public DriverView(Driver driver)
     {
-	super(new Texture(Gdx.files.internal("images/backgrounds/ferrari.jpg")));
+	super(driver.getForName() + " " + driver.getSurName(), new Texture(Gdx.files.internal("images/backgrounds/ferrari.jpg")));
 	
 	this.driver = driver;
     }
@@ -40,13 +40,15 @@ public class DriverView extends ContentView
 	Table rightTable = new Table();
 	Table rightBottomTable = new Table();
 	
-	profile = new BigDriverProfile(driver);
+	Window windowProfile = new Window(536, 270);
+	
+	windowProfile.addActor(profile = new BigDriverProfile(driver));
 	attributes = new DriverAttributes(driver);
 	contract = new Window(536, 400);
 	history = new Window(260, 200);
 	something = new Window(260, 200);
 	
-	leftTable.add(profile).pad(Window.MARGIN);
+	leftTable.add(windowProfile).pad(Window.MARGIN);
 	leftTable.row();    
 	leftTable.add(attributes).pad(Window.MARGIN);
 	
