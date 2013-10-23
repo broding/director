@@ -1,6 +1,6 @@
 package nl.basroding.director.controllers;
 
-import nl.basroding.director.views.DriverView;
+import nl.basroding.director.views.DeskView;
 
 /**
  *
@@ -8,15 +8,10 @@ import nl.basroding.director.views.DriverView;
  */
 public class DeskController extends Controller
 {   
+    @Override
     public void index()
     {
-	DriverView view = new DriverView(getModelCollection().getDriversModel().getWithId(1));
-	this.setView(view);
-    }
-    
-    public void showId(int id)
-    {
-	DriverView view = new DriverView(getModelCollection().getDriversModel().getWithId(id));
+	DeskView view = new DeskView();
 	this.setView(view);
     }
 }
