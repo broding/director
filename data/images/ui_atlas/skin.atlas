@@ -3,30 +3,39 @@ skin.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-sidemenu
+button_white
   rotate: false
   xy: 2, 5
+  size: 8, 9
+  split: 2, 2, 2, 2
+  pad: 8, 8, 5, 5
+  orig: 8, 9
+  offset: 0, 0
+  index: -1
+sidemenu
+  rotate: false
+  xy: 2, 16
   size: 1, 72
   orig: 1, 72
   offset: 0, 0
   index: -1
 sidemenu_hover
   rotate: false
-  xy: 5, 5
+  xy: 5, 16
   size: 1, 72
   orig: 1, 72
   offset: 0, 0
   index: -1
 sidemenu_special
   rotate: false
-  xy: 8, 5
+  xy: 8, 16
   size: 1, 72
   orig: 1, 72
   offset: 0, 0
   index: -1
 sidemenu_special_hover
   rotate: false
-  xy: 11, 5
+  xy: 11, 16
   size: 1, 72
   orig: 1, 72
   offset: 0, 0
