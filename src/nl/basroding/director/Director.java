@@ -1,5 +1,6 @@
 package nl.basroding.director;
 
+import nl.basroding.director.models.ModelCollection;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.GL20;
@@ -63,6 +64,12 @@ public final class Director
     
     public void setController(Controller controller)
     {
+	
+	if(this.controller != null)
+	{   
+	    this.controller.getView().clear();
+	}
+	
 	this.controller = controller;
 	this.controller.setup(this, modelCollection);
 	this.controller.index();

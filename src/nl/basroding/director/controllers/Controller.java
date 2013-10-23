@@ -1,7 +1,7 @@
 package nl.basroding.director.controllers;
 
 import nl.basroding.director.Director;
-import nl.basroding.director.ModelCollection;
+import nl.basroding.director.models.ModelCollection;
 import nl.basroding.director.views.ContentView;
 import nl.basroding.director.views.SideMenuView;
 import nl.basroding.director.views.TopbarView;
@@ -39,6 +39,9 @@ public class Controller
     
     final protected void setView(ContentView newView)
     {
+	if(this.view != null)
+	    this.view.clear();
+	
 	this.view = newView;
 	this.view.setX(SideMenuView.WIDTH);
 	this.director.setupView(newView);
